@@ -1,12 +1,21 @@
-import { Link, NavLink } from "react-router-dom";
-import { AiOutlineAlignLeft, AiOutlineClose } from "react-icons/ai";
+// router link
+import { Link } from "react-router-dom";
 
+// imported icons
+import * as ai from "react-icons/ai";
+
+// state
 import { useState } from "react";
+
+// navbar components
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
+import ReactIcon from "./ReactIcon";
 
 const Navbar = () => {
+
   const [navOpen, setNavOpen] = useState(false);
+
   return (
     <div className="flex justify-between h-12 bg-blue-600 items-center px-4">
       <h1 className="text-2xl font-bold">Logo</h1>
@@ -15,13 +24,12 @@ const Navbar = () => {
       <DesktopNav />
 
       {/* hamburger button */}
-      <button
-        className="cursor-pointer font-bold md:hidden"
-        aria-label="open menu"
-        onClick={() => setNavOpen(true)}
-      >
-        <AiOutlineAlignLeft size={24} />
-      </button>
+      <ReactIcon 
+      style={"cursor-pointer font-bold md:hidden"}
+      onIconClick={() => setNavOpen(true)}
+      Icon={ai.AiOutlineAlignLeft}
+      size={24}
+      />
 
       {/* Mobile navbar */}
       <div
@@ -32,6 +40,7 @@ const Navbar = () => {
         <div>
           {/* mobile nav menu header */}
           <div className="flex md:hidden justify-between px-3 border-b-2 items-center py-4">
+            
             <Link
               to="/"
               className="cursor-pointer font-bold"
@@ -40,12 +49,12 @@ const Navbar = () => {
               Menu
             </Link>
 
-            <button
-              className="text-2xl cursor-pointer font-bold"
-              onClick={() => setNavOpen(false)}
-            >
-              <AiOutlineClose size={22} />
-            </button>
+            <ReactIcon 
+            style={"text-2xl cursor-pointer font-bold"}
+            onIconClick={() => setNavOpen(false)}
+            Icon={ai.AiOutlineClose}
+            size={24}
+            />
 
           </div>
           <MobileNav onLinkClick={() => setNavOpen(false)} />
