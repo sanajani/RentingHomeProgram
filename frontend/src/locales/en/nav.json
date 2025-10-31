@@ -1,0 +1,12 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact",
+        "properties": "Properties",
+        "signup": "Signup",
+        "login": "Login",
+        "openMenu": "Open Main Menu",
+        "closeMenu": "Close Main Menu"
+    }
+}
