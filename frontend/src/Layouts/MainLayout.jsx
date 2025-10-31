@@ -6,12 +6,10 @@ import Navbar from '../components/nav/Navbar'
 const MainLayout = () => {
   return (
     <div className="bg-red-500 text-white">
-      <div className="">
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
+      <main className="">
       <Outlet />
-      </div>
+      </main>
     </div>
   )
 }
