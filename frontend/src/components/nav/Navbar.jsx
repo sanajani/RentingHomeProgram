@@ -2,15 +2,15 @@
 import { Link } from "react-router-dom";
 
 // imported icons
-import * as ai from "react-icons/ai";
+import {AiOutlineAlignLeft, AiOutlineClose, AiOutlineSearch } from "react-icons/ai";
 
 // state
 import { useState } from "react";
 
 // navbar components
-import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
 import ReactIcon from "./ReactIcon";
+import MobileNavWrapper from "./MobileNavWrapper";
 
 const Navbar = () => {
 
@@ -23,44 +23,29 @@ const Navbar = () => {
       {/* desktop navbar  */}
       <DesktopNav />
 
-      {/* hamburger button */}
-      <ReactIcon 
-      style={"cursor-pointer font-bold md:hidden"}
-      onIconClick={() => setNavOpen(true)}
-      Icon={ai.AiOutlineAlignLeft}
-      size={24}
+      {/* hamburger button and search button */}
+      <div className="flex gap-4">
+        {/* search */}
+        <ReactIcon 
+          style={"cursor-pointer font-bold md:hidden cursor-pointer"}
+          Icon={AiOutlineSearch}
+          size={24}
       />
-
-      {/* Mobile navbar */}
-      <div
-        className={`fixed top-0 min-h-screen w-full md:hidden bg-gray-900 transition-all duration-300 ease-in-out ${
-          navOpen ? "right-0" : "-right-full"
-        } z-50`}
-      >
-        <div>
-          {/* mobile nav menu header */}
-          <div className="flex md:hidden justify-between px-3 border-b-2 items-center py-4">
-            
-            <Link
-              to="/"
-              className="cursor-pointer font-bold"
-              onClick={() => setNavOpen(false)}
-            >
-              Menu
-            </Link>
-
-            <ReactIcon 
-            style={"text-2xl cursor-pointer font-bold"}
-            onIconClick={() => setNavOpen(false)}
-            Icon={ai.AiOutlineClose}
-            size={24}
-            />
-
-          </div>
-          <MobileNav onLinkClick={() => setNavOpen(false)} />
-        </div>
+      {/* hamburger */}
+        <ReactIcon 
+          style={"cursor-pointer font-bold md:hidden"}
+          onIconClick={() => setNavOpen(true)}
+          Icon={AiOutlineAlignLeft}
+          size={24}
+        />
       </div>
+
       {/* Mobile navbar */}
+      <MobileNavWrapper navOpen={navOpen} setNavOpen={setNavOpen}/>
+      {/* Mobile navbar */}
+
+
+
     </div>
   );
 };
