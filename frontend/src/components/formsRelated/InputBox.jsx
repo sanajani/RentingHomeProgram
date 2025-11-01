@@ -9,9 +9,9 @@ const InputBox = ({type,placeholder,className='',...props}) => {
             p-3 
             rounded-lg 
             outline-none 
-            bg-white text-gray-900 
+            bg-gray-700 text-white 
             w-full 
-            placeholder:text-gray-500 border
+            placeholder:text-gray-50 border
              border-gray-300 
              focus:ring-2 
              focus:ring-blue-500 
