@@ -1,5 +1,4 @@
 export const afghanistanProvinces = [
-  { id: "AF-S", value: "Chose Your Province", label: "Chose Your Province" },
   { id: "AF-HER", value: "herat", label: "Herat" },
   { id: "AF-KAB", value: "kabul", label: "Kabul" },
   { id: "AF-BDS", value: "badakhshan", label: "Badakhshan" },
