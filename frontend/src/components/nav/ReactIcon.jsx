@@ -1,8 +1,8 @@
 
-const ReactIcon = ({Icon, size, onIconClick,style=''}) => {
+const ReactIcon = ({Icon, size, onIconClick,style}) => {
   return (
     <button
-        className={'font-bold md:hidden cursor-pointer' + style}
+        className={`font-bold cursor-pointer ${style}`}
         aria-label="open menu"
         onClick={onIconClick}
     >
