@@ -1,22 +1,16 @@
 import { NavLink, Link } from "react-router-dom";
 
+// imported from config file
+import { navigationItems } from "../../utilities/navigationConfig";
+
 const MobileNav = ({ onLinkClick }) => {
   
-  let navigationItems = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
-    { to: "/properties", label: "Properties" },
-    { to: "/info", label: "Info" },
-  ];
-
   const getNavLinkClass = (({isActive}) => `
   rounded-lg w-full py-3 px-4 transition-colors duration-200
   ${
     isActive ? "bg-blue-600 text-white shadow-md" : "bg-gray-700 text-gray-200 hover:bg-gray-600 hover:text-white"
   }
   `)
-
 
   return (
     <div className="flex flex-col justify-center items-center gap-10 md:hidden min-h-screen">

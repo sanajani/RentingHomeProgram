@@ -1,5 +1,3 @@
-// router link
-import { Link } from "react-router-dom";
 
 // imported icons
 import {AiOutlineAlignLeft, AiOutlineClose, AiOutlineSearch } from "react-icons/ai";
@@ -27,13 +25,11 @@ const Navbar = () => {
       <div className="flex gap-4">
         {/* search */}
         <ReactIcon 
-          style={"cursor-pointer font-bold md:hidden cursor-pointer"}
           Icon={AiOutlineSearch}
           size={24}
       />
       {/* hamburger */}
         <ReactIcon 
-          style={"cursor-pointer font-bold md:hidden"}
           onIconClick={() => setNavOpen(true)}
           Icon={AiOutlineAlignLeft}
           size={24}
@@ -43,8 +39,6 @@ const Navbar = () => {
       {/* Mobile navbar */}
       <MobileNavWrapper navOpen={navOpen} setNavOpen={setNavOpen}/>
       {/* Mobile navbar */}
-
-
 
     </div>
   );

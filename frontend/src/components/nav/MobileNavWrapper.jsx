@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom'
 import ReactIcon from './ReactIcon'
-import {AiOutlineAlignLeft, AiOutlineClose, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import MobileNav from './MobileNav';
 
 const MobileNavWrapper = ({navOpen, setNavOpen}) => {
   return (
           <div
-        className={`fixed top-0 min-h-screen w-full md:hidden bg-gray-900 transition-all duration-500 ease-in-out ${navOpen ? "right-0" : "-right-full"} z-50`}
+        className={`fixed top-0 right-0 min-h-screen w-full 
+          md:hidden bg-gray-900 transition-all duration-500 
+          ease-in-out ${navOpen ? "translate-x-0" : "translate-x-full"} z-50`}
       >
         <div>
           {/* mobile nav menu header */}
